@@ -101,6 +101,7 @@ function index() {
       <div className='mt-5'>
         <Button className='m-2' onClick={sendQuestion} variant="primary">Add Question</Button>
         <Button className='m-2' onClick={()=>router.push({pathname:'allquestion'})} variant="primary">All Question</Button>
+        <Button className='m-2' onClick={()=>router.push({pathname:'quiz'})} variant="primary">Start Quiz</Button>
       </div>
     </div>
   )
