@@ -1,4 +1,5 @@
 import { sendData } from '@/config/firebaseMethod';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import { FloatingLabel, Button } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form';
@@ -11,6 +12,9 @@ function index() {
   const [option02 , setOption02] = useState("");
   const [option03 , setOption03] = useState("");
   const [rightAnswer , setRightAnswer] = useState("");
+
+  //navigate route
+  const router = useRouter();
 
   //send question function
   const sendQuestion =  () => {
@@ -95,7 +99,8 @@ function index() {
       </FloatingLabel>
       </div>
       <div className='mt-5'>
-        <Button onClick={sendQuestion} variant="primary">Add Question</Button>
+        <Button className='m-2' onClick={sendQuestion} variant="primary">Add Question</Button>
+        <Button className='m-2' onClick={()=>router.push({pathname:'allquestion'})} variant="primary">All Question</Button>
       </div>
     </div>
   )
